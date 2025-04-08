@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 /* General */
 body {
   font-family: Arial, sans-serif;
@@ -123,3 +126,51 @@ section {
   transform: scale(1.1);
   opacity: 0.8;
 }
+/*Registro*/
+.registro-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.registro-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.registro-form button {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.registro-form button:hover {
+  background-color: #0056b3;
+}
+
