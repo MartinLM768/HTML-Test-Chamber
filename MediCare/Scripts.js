@@ -1,0 +1,1 @@
+console.log("MediCare Supplies - Página cargada correctamente.");

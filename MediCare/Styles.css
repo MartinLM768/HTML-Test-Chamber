@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+  }
