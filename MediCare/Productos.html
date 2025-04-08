@@ -31,40 +31,44 @@
   <section class="py-5 mt-5">
     <div class="container">
       <h2 class="text-center mb-4">Nuestros Productos</h2>
-      <div class="row" id="productos-container">
+      <ul class="list-group">
         <!-- Producto 1 -->
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="assets/img/guantes.jpg" class="card-img-top" alt="Guantes quirúrgicos">
-            <div class="card-body">
-              <h5 class="card-title">Guantes Quirúrgicos</h5>
-              <p class="card-text">Alta resistencia y esterilidad garantizada. Paquete de 100 unidades.</p>
-              <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
-            </div>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Guantes Quirúrgicos</h5>
+            <p class="mb-1">Alta resistencia y esterilidad garantizada. Paquete de 100 unidades.</p>
           </div>
-        </div>
+          <button class="btn btn-primary add-to-cart" data-product="Guantes Quirúrgicos">Añadir al carrito</button>
+        </li>
         <!-- Producto 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="assets/img/bisturi.jpg" class="card-img-top" alt="Bisturí descartable">
-            <div class="card-body">
-              <h5 class="card-title">Bisturí Descartable</h5>
-              <p class="card-text">Diseño ergonómico y filo quirúrgico. Caja con 50 unidades.</p>
-              <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
-            </div>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Bisturí Descartable</h5>
+            <p class="mb-1">Diseño ergonómico y filo quirúrgico. Caja con 50 unidades.</p>
           </div>
-        </div>
+          <button class="btn btn-primary add-to-cart" data-product="Bisturí Descartable">Añadir al carrito</button>
+        </li>
         <!-- Producto 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="assets/img/gasas.jpg" class="card-img-top" alt="Gasa estéril">
-            <div class="card-body">
-              <h5 class="card-title">Gasa Estéril</h5>
-              <p class="card-text">100% algodón, absorbente y estéril. Pack de 200 unidades.</p>
-              <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
-            </div>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Gasa Estéril</h5>
+            <p class="mb-1">100% algodón, absorbente y estéril. Pack de 200 unidades.</p>
           </div>
-        </div>
+          <button class="btn btn-primary add-to-cart" data-product="Gasa Estéril">Añadir al carrito</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sección del carrito -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Carrito de Compras</h2>
+      <ul id="cart-items" class="list-group">
+        <li class="list-group-item text-center">Tu carrito está vacío.</li>
+      </ul>
+      <div class="text-center mt-3">
+        <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
       </div>
     </div>
   </section>
@@ -78,15 +82,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/scripts.js"></script>
-  <script>
-    // Lógica básica para carrito (solo visual)
-    const botones = document.querySelectorAll('.add-to-cart');
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-        alert('Producto añadido al carrito');
-      });
-    });
-  </script>
+  <script src="assets/js/Scripts.js"></script>
+
 </body>
 </html>
