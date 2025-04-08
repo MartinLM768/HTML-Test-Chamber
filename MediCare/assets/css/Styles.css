@@ -63,6 +63,10 @@ footer a:hover {
   color: #007bff;
 }
 
+.bg-primary{
+  height: 80vh;
+}
+
 /* Section */
 section {
   padding: 2rem 0;
