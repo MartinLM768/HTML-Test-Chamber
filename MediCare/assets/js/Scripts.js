@@ -1,48 +1,97 @@
-// Mensaje de consola para verificar que el script está cargado
-console.log("MediCare Supplies - Script cargado correctamente.");
+document.addEventListener("DOMContentLoaded", () => {
+  const btnMostrarRegistro = document.getElementById("btnMostrarRegistro");
+  const btnMostrarLogin = document.getElementById("btnMostrarLogin");
+  const registroForm = document.getElementById("registroForm");
+  const loginForm = document.getElementById("loginForm");
 
-// Lógica para el carrito
-document.addEventListener('DOMContentLoaded', () => {
-  const botones = document.querySelectorAll('.add-to-cart');
-  const cartItems = document.getElementById('cart-items');
-  const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
-
-  // Agregar productos al carrito
-  botones.forEach(boton => {
-    boton.addEventListener('click', () => {
-      const productName = boton.getAttribute('data-product');
-      const cartItem = document.createElement('li');
-      cartItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-      cartItem.textContent = productName;
-
-      // Botón para eliminar el producto del carrito
-      const removeButton = document.createElement('button');
-      removeButton.className = 'btn btn-danger btn-sm ms-3';
-      removeButton.textContent = 'Eliminar';
-      removeButton.addEventListener('click', () => {
-        cartItem.remove();
-        if (cartItems.children.length === 0) {
-          cartItems.innerHTML = '<li class="list-group-item text-center">Tu carrito está vacío.</li>';
-        }
-      });
-
-      cartItem.appendChild(removeButton);
-
-      // Si el carrito está vacío, elimina el mensaje predeterminado
-      if (cartItems.children[0] && cartItems.children[0].textContent === 'Tu carrito está vacío.') {
-        cartItems.innerHTML = '';
-      }
-
-      cartItems.appendChild(cartItem);
-
-      // Mensaje en consola para confirmar que el producto se añadió
-      console.log(`Producto añadido al carrito: ${productName}`);
-    });
+  // Mostrar/Ocultar formularios
+  btnMostrarRegistro.addEventListener("click", () => {
+    registroForm.classList.remove("d-none");
+    loginForm.classList.add("d-none");
+    btnMostrarRegistro.classList.replace("btn-secondary", "btn-primary");
+    btnMostrarLogin.classList.replace("btn-primary", "btn-secondary");
   });
 
-  // Vaciar el carrito
-  vaciarCarritoBtn.addEventListener('click', () => {
-    cartItems.innerHTML = '<li class="list-group-item text-center">Tu carrito está vacío.</li>';
-    console.log("El carrito ha sido vaciado.");
+  btnMostrarLogin.addEventListener("click", () => {
+    loginForm.classList.remove("d-none");
+    registroForm.classList.add("d-none");
+    btnMostrarLogin.classList.replace("btn-secondary", "btn-primary");
+    btnMostrarRegistro.classList.replace("btn-primary", "btn-secondary");
+  });
+
+  // Función para mostrar mensajes
+  function mostrarMensaje(texto, tipo = "success") {
+    const mensaje = document.createElement("div");
+    mensaje.className = `alert alert-${tipo}`;
+    mensaje.textContent = texto;
+    mensaje.style.textAlign = "center";
+    mensaje.style.marginTop = "15px";
+
+    const formVisible = !registroForm.classList.contains("d-none")
+      ? registroForm
+      : loginForm;
+
+    formVisible.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 3000);
+  }
+
+  // Registro
+  registroForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const telefono = document.getElementById("telefono").value;
+    const contrasena = document.getElementById("contrasena").value;
+    const confirmar = document.getElementById("confirmar").value;
+
+    if (contrasena !== confirmar) {
+      mostrarMensaje("Las contraseñas no coinciden", "danger");
+      return;
+    }
+
+    const usuario = {
+      nombre,
+      correo,
+      telefono,
+      contrasena
+    };
+
+    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
+
+    registroForm.reset();
+    mostrarMensaje("Registrado correctamente", "success");
+  });
+
+  // Login
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const correo = document.getElementById("loginCorreo").value;
+    const contrasena = document.getElementById("loginContrasena").value;
+
+    const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+
+    if (!usuarioGuardado) {
+      mostrarMensaje("No hay usuarios registrados", "danger");
+      return;
+    }
+
+    if (
+      correo === usuarioGuardado.correo &&
+      contrasena === usuarioGuardado.contrasena
+    ) {
+      mostrarMensaje("Sesión iniciada exitosamente", "success");
+      loginForm.reset();
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500); // Espera 1.5 segundos para que se vea el mensaje
+    
+    } else {
+      mostrarMensaje("Correo o contraseña incorrectos", "danger");
+    }
   });
 });
