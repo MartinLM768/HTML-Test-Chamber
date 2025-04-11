@@ -9,8 +9,7 @@
 </head>
 <body>
   <!-- Barra de navegación -->
-<!-- Navbar -->
-<!-- Barra de navegación -->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">MediCare Supplies</a>
@@ -54,63 +53,6 @@
   </div>
 </header>
 
-<!-- Sección de Registro e Inicio de Sesión -->
-<section id="registro" class="container py-5">
-  <!-- Botones para alternar -->
-  <div class="text-center mb-4">
-    <button id="btnMostrarRegistro" class="btn btn-primary">Registrarse</button>
-    <button id="btnMostrarLogin" class="btn btn-secondary">Iniciar Sesión</button>
-  </div>
-
-  <!-- Formulario de Registro -->
-  <form id="registroForm" class="registro-form">
-    <h2>Registro de Usuario</h2>
-
-    <div class="form-group">
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" name="nombre" required>
-    </div>
-
-    <div class="form-group">
-      <label for="correo">Correo electrónico</label>
-      <input type="email" id="correo" name="correo" required>
-    </div>
-
-    <div class="form-group">
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono">
-    </div>
-
-    <div class="form-group">
-      <label for="contrasena">Contraseña</label>
-      <input type="password" id="contrasena" name="contrasena" required>
-    </div>
-
-    <div class="form-group">
-      <label for="confirmar">Confirmar contraseña</label>
-      <input type="password" id="confirmar" name="confirmar" required>
-    </div>
-
-    <button type="submit">Registrarse</button>
-  </form>
-
-  <!-- Formulario de Inicio de Sesión -->
-  <form id="loginForm" class="registro-form d-none">
-    <h2>Iniciar Sesión</h2>
-
-    <div class="form-group">
-      <label for="loginCorreo">Correo electrónico</label>
-      <input type="email" id="loginCorreo" name="correo" required>
-    </div>
-
-    <div class="form-group">
-      <label for="loginContrasena">Contraseña</label>
-      <input type="password" id="loginContrasena" name="contrasena" required>
-    </div>
-
-    <button type="submit">Ingresar</button>
-  </form>
-</section>
 
 
 
@@ -255,58 +197,44 @@
 
 
   <!-- Testimonios -->
-<section id="testimonios" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Testimonios de Nuestros Clientes</h2>
-    <div id="testimonios-list" class="row g-4">
-
-      <!-- Testimonio fijo -->
-      <div class="col-md-4">
-        <div class="card p-3">
-          <blockquote class="blockquote mb-0">
-            <p>“Excelente calidad en los productos y atención rápida.”</p>
-            <footer class="blockquote-footer">María González</footer>
-          </blockquote>
+  <section id="opiniones" class="container mt-5">
+    <h2 class="text-center mb-4">Opiniones de nuestros usuarios</h2>
+    <div id="carouselOpiniones" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" id="opinionesContainer">
+        <div class="carousel-item active">
+          <div class="d-block w-100 p-4 bg-light rounded text-center">
+            <h5>Juan Pérez</h5>
+            <p>"Excelente servicio y productos de calidad."</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-block w-100 p-4 bg-light rounded text-center">
+            <h5>Ana García</h5>
+            <p>"Muy buena atención al cliente. Recomendado."</p>
+          </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card p-3">
-          <blockquote class="blockquote mb-0">
-            <p>“Los bisturís llegaron en perfectas condiciones. Muy recomendados.”</p>
-            <footer class="blockquote-footer">Carlos Ramírez</footer>
-          </blockquote>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card p-3">
-          <blockquote class="blockquote mb-0">
-            <p>“Muy buenos precios y envíos rápidos. ¡Volveré a comprar!”</p>
-            <footer class="blockquote-footer">Laura Pérez</footer>
-          </blockquote>
-        </div>
-      </div>
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselOpiniones" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselOpiniones" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
-
-    <!-- Formulario para añadir nuevo testimonio -->
-    <div class="mt-5">
-      <h4>Comparte tu experiencia</h4>
-      <form id="form-testimonio" class="row g-3">
-        <div class="col-md-6">
-          <input type="text" id="nuevoNombre" class="form-control" placeholder="Tu nombre" required>
-        </div>
-        <div class="col-md-6">
-          <input type="text" id="nuevoComentario" class="form-control" placeholder="Tu testimonio" required>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Enviar Testimonio</button>
-        </div>
-      </form>
-    </div>
+  </section>
+  <div class="container mt-4">
+    <h4>Añadir una opinión</h4>
+    <form id="formOpinion">
+      <div class="mb-3">
+        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+      </div>
+      <div class="mb-3">
+        <textarea id="mensaje" class="form-control" placeholder="Tu opinión" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
   </div>
-</section>
+    
 
 
 <!-- Footer -->
@@ -427,6 +355,28 @@
       mostrarFormulario('registro');
     });
   </script>
+  <script>
+    document.getElementById('formOpinion').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const mensaje = document.getElementById('mensaje').value;
+  
+      const nuevaOpinion = document.createElement('div');
+      nuevaOpinion.classList.add('carousel-item');
+      nuevaOpinion.innerHTML = `
+        <div class="d-block w-100 p-4 bg-light rounded text-center">
+          <h5>${nombre}</h5>
+          <p>"${mensaje}"</p>
+        </div>
+      `;
+  
+      document.getElementById('opinionesContainer').appendChild(nuevaOpinion);
+  
+      // Limpia el formulario
+      document.getElementById('formOpinion').reset();
+    });
+  </script>
+  
   
   
 </body>
