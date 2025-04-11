@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotalElement = document.getElementById("cart-total");
-  const cartCountElement = document.getElementById("cart-count");
+//  const cartCountElement = document.getElementById("cart-count");
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     cartTotalElement.textContent = total.toFixed(2);
-    cartCountElement.textContent = cart.length;
+  //  cartCountElement.textContent = cart.length;
 
     // Eventos para botones
     document.querySelectorAll("[data-action]").forEach(btn => {

@@ -157,3 +157,7 @@ section {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.carousel-caption p {
+  color: #4633cf !important;
+}
