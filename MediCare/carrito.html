@@ -48,43 +48,58 @@
     <button class="btn btn-danger mt-3" id="clear-cart">Vaciar carrito</button>
   </main>
 
-  <!-- Footer -->
-
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/carrito.js"></script>
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 MediCare Supplies. Todos los derechos reservados.</p>
   
-      <!-- Redes Sociales -->
-      <div class="social-icons my-3">
-        <a href="#" target="_blank" aria-label="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-        </a>
-        <a href="#" target="_blank" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-        <a href="#" target="_blank" aria-label="Twitter">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Not_X">
-        </a>
-      </div>
-  
-      <!-- Mapa de ubicación ficticia -->
-      <div class="map-container my-3">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.679847802398!2d-74.08175308523764!3d4.60971064372173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99f3f507b15b%3A0x6cb4976b8c2ee624!2sPlaza%20de%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1619483066504!5m2!1ses!2sco" 
-          loading="lazy" allowfullscreen>
-        </iframe>
-      </div>
-  
-      <!-- Información de Envíos y Devoluciones -->
-      <div class="shipping-info">
-        <h5>Envíos y Devoluciones</h5>
-        <p>Realizamos envíos a todo el territorio colombiano en un plazo de 2 a 5 días hábiles. Si no estás satisfecho con tu compra, tienes hasta 10 días para solicitar la devolución. Consulta nuestros <a href="#">términos y condiciones</a> para más detalles.</p>
-      </div>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+  <div class="container">
+    <p>&copy; 2025 MediCare Supplies. Todos los derechos reservados.</p>
+
+    <!-- Redes Sociales -->
+    <div class="social-icons my-3">
+      <a href="#" target="_blank" aria-label="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="#" target="_blank" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="#" target="_blank" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Not_X">
+      </a>
     </div>
-  </footer>
+
+    <!-- Mapa de ubicación ficticia -->
+    <div class="map-container my-3">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.679847802398!2d-74.08175308523764!3d4.60971064372173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99f3f507b15b%3A0x6cb4976b8c2ee624!2sPlaza%20de%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1619483066504!5m2!1ses!2sco" 
+        loading="lazy" allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Información de Envíos y Devoluciones -->
+    <div class="shipping-info">
+      <h5>Envíos y Devoluciones</h5>
+      <p>Realizamos envíos a todo el territorio colombiano en un plazo de 2 a 5 días hábiles. Si no estás satisfecho con tu compra, tienes hasta 10 días para solicitar la devolución. Consulta nuestros <a href="#">términos y condiciones</a> para más detalles.</p>
+    </div>
+  </div>
+    <!-- Estilos Directos -->
+<style>
+  .social-icons img {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+</style>
+</footer>
 </body>
 </html>
