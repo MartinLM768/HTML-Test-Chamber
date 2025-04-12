@@ -123,5 +123,38 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/scripts.js"></script>
+
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/573222479373" target="_blank" id="whatsapp-button">
+  <img src="https://www.freepnglogos.com/uploads/whatsapp-logo-png-hd-2.png" alt="WhatsApp">
+</a>
+<style>
+/* Estilos para el botón flotante de WhatsApp */
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;  /* Posiciona el botón 20px desde la parte inferior */
+  right: 20px;   /* Posiciona el botón 20px desde la parte derecha */
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+#whatsapp-button img {
+  width: 50px;  /* Tamaño del ícono de WhatsApp */
+  height: 50px; /* Tamaño del ícono de WhatsApp */
+  border-radius: 50%;
+}
+
+/* Hover effect (opcional) */
+#whatsapp-button:hover {
+  transform: scale(1.1);  /* Aumenta ligeramente el tamaño al pasar el mouse */
+  opacity: 0.8;  /* Añade opacidad al pasar el mouse */
+  cursor: pointer;
+}
+</style>
+
 </body>
 </html>
